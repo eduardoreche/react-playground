@@ -13,6 +13,29 @@ module.exports = {
         query: {
           presets: ['react', 'es2015', 'stage-1']
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['css-loader']
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        loaders: [
+          'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
+          {
+            loader: 'image-webpack-loader',
+            query: {
+              pngquant: { quality: '75-90', speed: 3 },
+              mozjpeg: { quality: 65 },
+              gifsicle: {
+                interlaced: false
+              },
+              optipng: {
+                optimizationLevel: 4
+              }
+            }
+          }
+        ]
       }
     ]
   },
