@@ -30,10 +30,12 @@
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.24.1",
+    "cropperjs": "^1.1.0",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "react": "^15.6.1",
     "react-addons-shallow-compare": "^15.6.2",
+    "react-cropper": "^1.0.0",
     "react-dates": "^12.6.0",
     "react-dom": "^15.6.1",
     "react-dropzone": "^4.1.3",

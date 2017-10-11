@@ -1529,6 +1529,14 @@ create-react-class@^15.6.0:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
+cropperjs@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/cropperjs/-/cropperjs-1.1.0.tgz#e38f47d62683e7a33ede11c47d067703864f15ad"
+
+cropperjs@v1.0.0-rc.3:
+  version "1.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/cropperjs/-/cropperjs-1.0.0-rc.3.tgz#50a7c7611befc442702f845ede77d7df4572e82b"
+
 cross-spawn@^5.0.1:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -4741,6 +4749,13 @@ react-addons-shallow-compare@^15.6.2:
 react-addons-test-utils@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/react-addons-test-utils/-/react-addons-test-utils-15.6.0.tgz#062d36117fe8d18f3ba5e06eb33383b0b85ea5b9"
+
+react-cropper@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-cropper/-/react-cropper-1.0.0.tgz#7b65a85bbfcd64fa586be25742b3f16a37847414"
+  dependencies:
+    cropperjs v1.0.0-rc.3
+    prop-types "^15.5.8"
 
 react-dates@^12.6.0:
   version "12.6.0"
