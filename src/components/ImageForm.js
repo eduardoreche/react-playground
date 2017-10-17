@@ -34,6 +34,48 @@ class ImageForm extends Component {
     });
   }
 
+  renderImageVisualization() {
+    if (this.state.image_src) {
+      return [
+        <div className="row" key="0">
+          <div className="col-8">
+            <h3>Original</h3>
+            <Cropper
+              aspectRatio={4 / 3}
+              preview=".img-preview"
+              guides={false}
+              src={this.state.image_src}
+              ref={cropper => {
+                this.cropper = cropper;
+              }}
+            />
+          </div>
+          <div className="col-4">
+            <div className="row">
+              <h3>Preview</h3>
+              <div
+                className="img-preview"
+                style={{ width: '100%', height: 200 }}
+              />
+            </div>
+            <br />
+            <button className="btn btn-primary" onClick={this.cropImage}>
+              Crop Image
+            </button>
+          </div>
+        </div>,
+        <div className="row" key="1">
+          {this.state.cropResult && (
+            <div className="col-8">
+              <h3>Crop Result</h3>
+              <img src={this.state.cropResult} alt="cropped image" />
+            </div>
+          )}
+        </div>
+      ];
+    }
+  }
+
   render() {
     const { files, crop } = this.state;
 
@@ -51,43 +93,8 @@ class ImageForm extends Component {
             </Dropzone>
           </div>
         </div>
-        <div className="row">
-          <div className="col-12">
-            <Cropper
-              aspectRatio={16 / 9}
-              preview=".img-preview"
-              guides={false}
-              src={this.state.image_src}
-              ref={cropper => {
-                this.cropper = cropper;
-              }}
-            />
-          </div>
-          <div className="row">
-            <div>
-              <div className="box" style={{ width: '50%', float: 'right' }}>
-                <h1>Preview</h1>
-                <div
-                  className="img-preview"
-                  style={{ width: '100%', float: 'left', height: 100 }}
-                />
-              </div>
-              <div className="box" style={{ width: '50%', float: 'right' }}>
-                <h1>
-                  <span>Crop</span>
-                  <button onClick={this.cropImage} style={{ float: 'right' }}>
-                    Crop Image
-                  </button>
-                </h1>
-                <img
-                  style={{ width: '100%' }}
-                  src={this.state.cropResult}
-                  alt="cropped image"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+
+        {this.renderImageVisualization()}
       </div>
     );
   }
